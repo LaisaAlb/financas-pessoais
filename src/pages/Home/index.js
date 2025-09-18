@@ -1,16 +1,14 @@
-import Reac, { useContext} from 'react';
-import {View, Text, Button} from 'react-native';
+import React from 'react';
+import Header from '../../components/Header';
+import { Background, ContainerHome, TitleHome } from './styles';
 
-import { AuthContext } from '../../contexts/auth';
-
-export default function Home(){
-
-  const { signOut } = useContext(AuthContext);
-
-  return(
-    <View>
-      <Text>Home</Text>
-      <Button title="Sair" onPress={() => signOut()}/>
-    </View>
-  )
+export default function Home() {
+  return (
+    <Background>
+      <Header title="Minhas Movimentações" />
+      <ContainerHome>
+        <TitleHome>Bem-vindo(a)!</TitleHome>
+      </ContainerHome>
+    </Background>
+  );
 }
