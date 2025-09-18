@@ -17,3 +17,7 @@ export const TitleHome = styled.Text`
   font-weight: bold;
   color: #3b3dbf;
 `;
+
+export const ListBalance = styled.FlatList`
+  max-height: 190px;
+`;
