@@ -1,16 +1,25 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from '../pages/Home';
-// import Profile from '../pages/Profile';
+import NewRegister from '../pages/NewRegister';
 
 const Drawer = createDrawerNavigator();
 const Stack = createNativeStackNavigator();
 
+// Stack da Home
 function HomeStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
-      {/* outros screens do stack */}
+    </Stack.Navigator>
+  );
+}
+
+// Stack do Novo Registro
+function NewRegisterStack() {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="NewRegister" component={NewRegister} />
     </Stack.Navigator>
   );
 }
@@ -30,9 +39,13 @@ export default function AppRoutes() {
       <Drawer.Screen 
         name="HomeStack" 
         component={HomeStack} 
-        options={{ title: 'Home' }} 
+        options={{ title: 'Home', drawerLabel: 'Home' }} 
       />
-      {/* <Drawer.Screen name="Profile" component={Profile} /> */}
+      <Drawer.Screen 
+        name="NewRegisterStack" 
+        component={NewRegisterStack} 
+        options={{ title: 'Novo Registro', drawerLabel: 'Novo Registro' }} 
+      />
     </Drawer.Navigator>
   );
 }
